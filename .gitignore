@@ -1,0 +1,10 @@
+__pycache__/
+workingbook.ipynb
+ISIC/vgg_ae
+ISIC/efficientnet_ae
+helper/archive
+slurm*
+run_models/slurm*
+archive/
+.ipynb_checkpoints/
+OTCcost/HeartOTCost.ipynb
