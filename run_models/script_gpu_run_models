@@ -1,0 +1,18 @@
+#! /usr/bin/bash
+#SBATCH --job-name=ot
+#SBATCH --partition=gpu
+#SBATCH --exclusive
+#SBATCH --mail-type=None
+#SBATCH --mail-user=aelhussein@nygenome.org
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=20G
+#SBATCH --gres gpu:tesla:1
+#SBATCH --time=40:00:00
+
+source ~/anaconda3/bin/activate ~/anaconda3/envs/cuda_env/
+module load cuda
+
+DIR='/gpfs/commons/groups/gursoy_lab/aelhussein/ot_cost/otcost_fl_rebase'
+echo "$1"
+python $DIR/code/run_models/run.py --dataset="$1" --hyperparameter="$2" --personal="$3"

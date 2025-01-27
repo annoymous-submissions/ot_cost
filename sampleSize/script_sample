@@ -1,0 +1,15 @@
+#! /usr/bin/bash
+#SBATCH --job-name=sample
+#SBATCH --partition=pe2
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=aelhussein@nygenome.org
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=40G
+#SBATCH --time=40:00:00
+
+source ~/anaconda3/bin/activate
+conda activate torch_env
+
+DIR='/gpfs/commons/groups/gursoy_lab/aelhussein/ot_cost/otcost_fl_rebase'
+python $DIR/code/sampleSize/sampleSize.py

@@ -1,0 +1,15 @@
+#! /usr/bin/bash
+#SBATCH --job-name=ot
+#SBATCH --partition=pe2
+#SBATCH --mail-type=None
+#SBATCH --mail-user=aelhussein@nygenome.org
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=15G
+#SBATCH --time=40:00:00
+
+source ~/anaconda3/bin/activate ~/anaconda3/envs/cuda_env/
+
+DIR='/gpfs/commons/groups/gursoy_lab/aelhussein/ot_cost/otcost_fl_rebase'
+echo "$1"
+python $DIR/code/run_models/run.py --dataset="$1" --hyperparameter="$2" --personal="$3"
