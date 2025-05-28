@@ -1,0 +1,32 @@
+# Ignore directories named exactly this at any level
+**/data/
+**/results/
+**/results_loss/
+**/archive/
+**/saved_models/
+**/saved_models_loss/
+**/activations/
+**/activations_loss/
+**/logs/
+**/__pycache__/
+
+# Also optionally match any variations if needed
+**/results*/              
+**/*archive*/            
+
+# File types
+*.txt
+*.json
+*.ipynb
+*.pkl
+*.pyc
+*.log
+*out
+*pt
+*pth
+
+code/supplementary
+save_code*.sh
+run_delayed.sh
+pdf2png.sh
+
